@@ -364,11 +364,12 @@ body {
   height: 100%;
 }
 body {
-  background: url("../../images/bg2.jpeg");
+  background: url("../../images/bg.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 60% 50%;
   background-size: 640px 600px;
+  background-color: #eee;
 }
 .container {
   position: relative;
@@ -1789,7 +1790,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #2674a1;
+  background: #652b77;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
