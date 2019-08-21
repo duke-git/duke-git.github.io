@@ -54,13 +54,13 @@
   };
 </script>
 
-  <meta name="description" content="原文请查阅这里，本文采用知识共享署名 4.0 国际许可协议共享，BY Troland。  前言这是  JavaScript 工作原理的第一章。本章会对语言引擎，运行时，调用栈做一个概述。 随着 JavaScript 越来越流行，团队也利用其在他们诸如前端，后端，混合 apps，嵌入设备以及更多设备等开发栈中的不同层面的支持。 本章系列的第一章，本系列旨在深入 JavaScript  并理解它是如">
+  <meta name="description" content="原文请查阅这里，本文采用知识共享署名 4.0 国际许可协议共享，BY Troland。  这是  JavaScript 工作原理的第一章。本章会对语言引擎，运行时，调用栈做一个概述。 随着 JavaScript 越来越流行，团队也利用其在他们诸如前端，后端，混合 apps，嵌入设备以及更多设备等开发栈中的不同层面的支持。 本章系列的第一章，本系列旨在深入 JavaScript  并理解它是如何运">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="转：javascript工作原理 1 引擎，运行时，调用堆栈">
 <meta property="og:url" content="http://yoursite.com/2019/08/20/javascript_theory_1/index.html">
 <meta property="og:site_name" content="柳叶刀的IT技术博客">
-<meta property="og:description" content="原文请查阅这里，本文采用知识共享署名 4.0 国际许可协议共享，BY Troland。  前言这是  JavaScript 工作原理的第一章。本章会对语言引擎，运行时，调用栈做一个概述。 随着 JavaScript 越来越流行，团队也利用其在他们诸如前端，后端，混合 apps，嵌入设备以及更多设备等开发栈中的不同层面的支持。 本章系列的第一章，本系列旨在深入 JavaScript  并理解它是如">
+<meta property="og:description" content="原文请查阅这里，本文采用知识共享署名 4.0 国际许可协议共享，BY Troland。  这是  JavaScript 工作原理的第一章。本章会对语言引擎，运行时，调用栈做一个概述。 随着 JavaScript 越来越流行，团队也利用其在他们诸如前端，后端，混合 apps，嵌入设备以及更多设备等开发栈中的不同层面的支持。 本章系列的第一章，本系列旨在深入 JavaScript  并理解它是如何运">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://user-images.githubusercontent.com/1475173/40289980-03f75c32-5cee-11e8-8b88-6920c354c87e.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/1475173/40290010-30290030-5cee-11e8-9bb1-3fb6faae7359.png">
@@ -73,7 +73,7 @@
 <meta property="og:updated_time" content="2019-08-20T09:15:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="转：javascript工作原理 1 引擎，运行时，调用堆栈">
-<meta name="twitter:description" content="原文请查阅这里，本文采用知识共享署名 4.0 国际许可协议共享，BY Troland。  前言这是  JavaScript 工作原理的第一章。本章会对语言引擎，运行时，调用栈做一个概述。 随着 JavaScript 越来越流行，团队也利用其在他们诸如前端，后端，混合 apps，嵌入设备以及更多设备等开发栈中的不同层面的支持。 本章系列的第一章，本系列旨在深入 JavaScript  并理解它是如">
+<meta name="twitter:description" content="原文请查阅这里，本文采用知识共享署名 4.0 国际许可协议共享，BY Troland。  这是  JavaScript 工作原理的第一章。本章会对语言引擎，运行时，调用栈做一个概述。 随着 JavaScript 越来越流行，团队也利用其在他们诸如前端，后端，混合 apps，嵌入设备以及更多设备等开发栈中的不同层面的支持。 本章系列的第一章，本系列旨在深入 JavaScript  并理解它是如何运">
 <meta name="twitter:image" content="https://user-images.githubusercontent.com/1475173/40289980-03f75c32-5cee-11e8-8b88-6920c354c87e.png">
   <link rel="alternate" href="/atom.xml" title="柳叶刀的IT技术博客" type="application/atom+xml">
   <link rel="canonical" href="http://yoursite.com/2019/08/20/javascript_theory_1/">
@@ -365,7 +365,7 @@
         <blockquote>
 <p>原文请查阅<a href="https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf" target="_blank" rel="noopener">这里</a>，本文采用<a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">知识共享署名 4.0 国际许可协议</a>共享，BY <a href="https://github.com/Troland" target="_blank" rel="noopener">Troland</a>。</p>
 </blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p><strong>这是  JavaScript 工作原理的第一章。本章会对语言引擎，运行时，调用栈做一个概述。</strong></p>
+<p><strong>这是  JavaScript 工作原理的第一章。本章会对语言引擎，运行时，调用栈做一个概述。</strong></p>
 <p>随着 JavaScript 越来越流行，团队也利用其在他们诸如前端，后端，混合 apps，嵌入设备以及更多设备等开发栈中的不同层面的支持。</p>
 <p>本章系列的第一章，本系列旨在深入 JavaScript  并理解它是如何运行的：我们认为在了解 JavaScript 的构建模块和它们是如何捏合在一起工作之后你将会写出更好的代码和 apps。我们将会分享一些当在创建 <a href="https://www.sessionstack.com/?utm_source=medium&utm_medium=source&utm_content=javascript-series-post1-intro" target="_blank" rel="noopener">SessionStack</a> 时候的经验法则，<a href="https://www.sessionstack.com/?utm_source=medium&utm_medium=source&utm_content=javascript-series-post1-intro" target="_blank" rel="noopener">SessionStack</a> 是一个轻量级的 JavaScript 程序它拥有强壮性和高性能的优点以保持竞争力。</p>
 <a id="more"></a>
@@ -593,7 +593,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-引擎"><span class="nav-number">1.2.</span> <span class="nav-text">JavaScript 引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时"><span class="nav-number">1.3.</span> <span class="nav-text">运行时</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调用栈"><span class="nav-number">1.4.</span> <span class="nav-text">调用栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并发和事件循环"><span class="nav-number">1.5.</span> <span class="nav-text">并发和事件循环</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-引擎"><span class="nav-number">2.</span> <span class="nav-text">JavaScript 引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时"><span class="nav-number">3.</span> <span class="nav-text">运行时</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调用栈"><span class="nav-number">4.</span> <span class="nav-text">调用栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并发和事件循环"><span class="nav-number">5.</span> <span class="nav-text">并发和事件循环</span></a></li></ol></div>
             
 
           </div>
